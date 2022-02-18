@@ -83,4 +83,6 @@ export const WORDS = [
   'snare',
   'gnome',
   'eater',
+  'gaunt',
+  'moody',
 ]
