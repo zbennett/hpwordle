@@ -1,15 +1,20 @@
+import { useState } from 'react'
 import { Cell } from '../grid/Cell'
 import { BaseModal } from './BaseModal'
+import { BuyMeACoffeeModal } from './BuyMeACoffeeModal'
 
 type Props = {
   isOpen: boolean
   handleClose: () => void
+  handleCopy: () => void
 }
 
-export const InfoModal = ({ isOpen, handleClose }: Props) => {
+export const InfoModal = ({ isOpen, handleClose, handleCopy }: Props) => {
+  const [isBuyMeModalOpen, setBuyMeModalOpen] = useState(false)
   return (
     <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
+        Wizarding Wordle | A Harry Potter Wordle <br></br>
         Guess the word in 6 tries. After each guess, the color of the tiles will
         change to show how close your guess was to the word.
       </p>
@@ -57,6 +62,11 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         The letter U is not in the word in any spot.
       </p>
 
+      <button className='bg-blue-500 hover:bg-blue-700 text-gray-500 dark:text-gray-300 mt-6 text-lg px-4 rounded py-2'  onClick={() => setBuyMeModalOpen(true)}>
+        ☕ Buy Me a Coffee
+      </button>
+      
+
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
         This is an open source version of the word guessing game we all know and
         love -{' '}
@@ -67,6 +77,11 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
           check out the code here
         </a>{' '}
       </p>
+      <BuyMeACoffeeModal
+        isOpen={isBuyMeModalOpen}
+        handleClose={() => setBuyMeModalOpen(false)}
+        handleCopy={() => handleCopy()}
+      />
     </BaseModal>
   )
 }

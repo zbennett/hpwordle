@@ -85,4 +85,9 @@ export const WORDS = [
   'eater',
   'gaunt',
   'moody',
+  'alley',
+  'avada',
+  'daily',
+  'katie',
+  'pasty',
 ]

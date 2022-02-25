@@ -85,4 +85,9 @@ export const VALID_GUESSES = [
   'eater',
   'gaunt',
   'moody',
+  'alley',
+  'avada',
+  'daily',
+  'katie',
+  'pasty',
 ]

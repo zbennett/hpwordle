@@ -63,6 +63,10 @@ svg:hover {
   animation-duration: var(--animation-speed-fast);
 }
 
+.qr {
+  font-size: 13px;
+}
+
 @keyframes revealAbsentCharCell {
   0% {
     transform: rotateX(0deg);

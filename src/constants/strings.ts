@@ -1,4 +1,4 @@
-export const GAME_TITLE = 'HP Wordle'
+export const GAME_TITLE = 'Wizarding Wordle'
 
 export const WIN_MESSAGES = ['Great Job!', 'Awesome', 'Well done!']
 export const GAME_COPIED_MESSAGE = 'Game copied to clipboard'
