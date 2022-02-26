@@ -62,7 +62,7 @@ export const InfoModal = ({ isOpen, handleClose, handleCopy }: Props) => {
         The letter U is not in the word in any spot.
       </p>
 
-      <button className='bg-blue-500 hover:bg-blue-700 text-gray-500 dark:text-gray-300 mt-6 text-lg px-4 rounded py-2'  onClick={() => setBuyMeModalOpen(true)}>
+      <button className='bg-indigo-600 hover:bg-indigo-700 text-gray-500 dark:text-gray-300 mt-6 text-lg px-4 rounded py-2'  onClick={() => setBuyMeModalOpen(true)}>
         ☕ Buy Me a Coffee
       </button>
       

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Countdown from 'react-countdown'
 import { StatBar } from '../stats/StatBar'
 import { Histogram } from '../stats/Histogram'
@@ -5,6 +6,7 @@ import { GameStats } from '../../lib/localStorage'
 import { shareStatus } from '../../lib/share'
 import { tomorrow } from '../../lib/words'
 import { BaseModal } from './BaseModal'
+import { BuyMeACoffeeModal } from './BuyMeACoffeeModal'
 import {
   STATISTICS_TITLE,
   GUESS_DISTRIBUTION_TEXT,
@@ -21,6 +23,7 @@ type Props = {
   isGameWon: boolean
   handleShare: () => void
   isHardMode: boolean
+  handleCopy: () => void
 }
 
 export const StatsModal = ({
@@ -32,7 +35,9 @@ export const StatsModal = ({
   isGameWon,
   handleShare,
   isHardMode,
+  handleCopy,
 }: Props) => {
+  const [isBuyMeModalOpen, setBuyMeModalOpen] = useState(false)
   if (gameStats.totalGames <= 0) {
     return (
       <BaseModal
@@ -58,6 +63,8 @@ export const StatsModal = ({
       {(isGameLost || isGameWon) && (
         <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
           <div>
+            <div className='mt-14'></div>
+            <div>
             <h5>{NEW_WORD_TEXT}</h5>
             <Countdown
               className="text-lg font-medium text-gray-900 dark:text-gray-100"
@@ -65,6 +72,11 @@ export const StatsModal = ({
               daysInHours={true}
             />
           </div>
+          </div>
+          <button type="button" className='mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 sm:text-sm focus:outline-none'  onClick={() => setBuyMeModalOpen(true)}>
+            <div>☕</div> 
+            Buy Me a Coffee
+          </button>
           <button
             type="button"
             className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
@@ -77,6 +89,11 @@ export const StatsModal = ({
           </button>
         </div>
       )}
+      <BuyMeACoffeeModal
+        isOpen={isBuyMeModalOpen}
+        handleClose={() => setBuyMeModalOpen(false)}
+        handleCopy={() => handleCopy()}
+      />
     </BaseModal>
   )
 }
