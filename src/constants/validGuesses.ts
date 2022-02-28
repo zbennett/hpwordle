@@ -12,7 +12,7 @@ export const VALID_GUESSES = [
   'death',
   'dobby',  
   'elder',
-  'filtch',
+  'filch',
   'ghost', 
   'giant',
   'ginny',

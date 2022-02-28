@@ -12,7 +12,7 @@ export const WORDS = [
   'death',
   'dobby',  
   'elder',
-  'filtch',
+  'filch',
   'ghost', 
   'giant',
   'ginny',
