@@ -109,6 +109,8 @@ export const StatsModal = ({
           <a
             className="text-blue-500"
             href="https://dynamic.harrypotterwordle.com"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             varying length wordle
           </a>
