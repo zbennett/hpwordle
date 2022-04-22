@@ -60,25 +60,29 @@ export const StatsModal = ({
       handleClose={handleClose}
     >
       <StatBar gameStats={gameStats} />
-      <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
+      <h5 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
         {GUESS_DISTRIBUTION_TEXT}
-      </h4>
+      </h5>
       <Histogram gameStats={gameStats} />
       {(isGameLost || isGameWon) && (
         <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
           <div>
-            <div className='mt-14'></div>
+            <div className="mt-14"></div>
             <div>
-            <h5>{NEW_WORD_TEXT}</h5>
-            <Countdown
-              className="text-lg font-medium text-gray-900 dark:text-gray-100"
-              date={tomorrow}
-              daysInHours={true}
-            />
+              <h5>{NEW_WORD_TEXT}</h5>
+              <Countdown
+                className="text-lg font-medium text-gray-900 dark:text-gray-100"
+                date={tomorrow}
+                daysInHours={true}
+              />
+            </div>
           </div>
-          </div>
-          <button type="button" className='mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 sm:text-sm focus:outline-none'  onClick={() => setBuyMeModalOpen(true)}>
-            <div>☕</div> 
+          <button
+            type="button"
+            className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 sm:text-sm focus:outline-none"
+            onClick={() => setBuyMeModalOpen(true)}
+          >
+            <div>☕</div>
             Buy Me a Coffee
           </button>
           <button
@@ -99,6 +103,18 @@ export const StatsModal = ({
           </button>
         </div>
       )}
+      <div className="mt-4">
+        <p className="dark:text-white">
+          Looking for more of a challenge? Try our{' '}
+          <a
+            className="text-blue-500"
+            href="https://dynamic.harrypotterwordle.com"
+          >
+            varying length wordle
+          </a>
+          &nbsp;, with a different sized word every day.
+        </p>
+      </div>
       <BuyMeACoffeeModal
         isOpen={isBuyMeModalOpen}
         handleClose={() => setBuyMeModalOpen(false)}
