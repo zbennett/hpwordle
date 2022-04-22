@@ -112,7 +112,7 @@ export const StatsModal = ({
           >
             varying length wordle
           </a>
-          &nbsp;, with a different sized word every day.
+          , with a different sized word every day.
         </p>
       </div>
       <BuyMeACoffeeModal
