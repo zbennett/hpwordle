@@ -82,8 +82,7 @@ export const StatsModal = ({
             className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 sm:text-sm focus:outline-none"
             onClick={() => setBuyMeModalOpen(true)}
           >
-            <div>☕</div>
-            Buy Me a Coffee
+            Support the site
           </button>
           <button
             type="button"
@@ -108,13 +107,21 @@ export const StatsModal = ({
           Looking for more of a challenge? Try our{' '}
           <a
             className="text-blue-500"
+            href="https://myrtle.harrypotterwordle.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            character guessing wordle
+          </a>
+          &nbsp;or our&nbsp;
+          <a
+            className="text-blue-500"
             href="https://dynamic.harrypotterwordle.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            varying length wordle
+            varying length wordle.
           </a>
-          , with a different sized word every day.
         </p>
       </div>
       <BuyMeACoffeeModal
