@@ -67,7 +67,7 @@ export const StatsModal = ({
       {(isGameLost || isGameWon) && (
         <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
           <div>
-            <div className="mt-14"></div>
+            <div className="mt-10"></div>
             <div>
               <h5>{NEW_WORD_TEXT}</h5>
               <Countdown
@@ -106,7 +106,7 @@ export const StatsModal = ({
         <p className="dark:text-white">
           Looking for more of a challenge? Try our{' '}
           <a
-            className="text-blue-500"
+            className="text-blue-500 focus:outline-none"
             href="https://myrtle.harrypotterwordle.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -115,7 +115,7 @@ export const StatsModal = ({
           </a>
           &nbsp;or our&nbsp;
           <a
-            className="text-blue-500"
+            className="text-blue-500 focus:outline-none"
             href="https://dynamic.harrypotterwordle.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -123,6 +123,21 @@ export const StatsModal = ({
             varying length wordle.
           </a>
         </p>
+      </div>
+      <div>
+        Questions, comments, concerns, suggestions? Tweet us
+        <a
+          href="https://twitter.com/HPWordle?ref_src=twsrc%5Etfw"
+          className="twitter-follow-button text-blue-500 border-transparent focus:outline-none"
+          data-show-count="false"
+        >
+          &nbsp;@HPWordle
+        </a>
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          // charset="utf-8"
+        ></script>
       </div>
       <BuyMeACoffeeModal
         isOpen={isBuyMeModalOpen}

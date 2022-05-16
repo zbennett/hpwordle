@@ -62,21 +62,28 @@ export const InfoModal = ({ isOpen, handleClose, handleCopy }: Props) => {
         The letter U is not in the word in any spot.
       </p>
 
-      <button className='mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 sm:text-sm focus:outline-none'  onClick={() => setBuyMeModalOpen(true)}>
-        ☕ Buy Me a Coffee
+      <button
+        className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 sm:text-sm focus:outline-none"
+        onClick={() => setBuyMeModalOpen(true)}
+      >
+        Support the site
       </button>
-      
 
-      <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
-        This is an open source version of the word guessing game we all know and
-        love -{' '}
+      <div>
+        Questions, comments, concerns, suggestions? Tweet us
         <a
-          href="https://github.com/cwackerfuss/react-wordle"
-          className="underline font-bold"
+          href="https://twitter.com/HPWordle?ref_src=twsrc%5Etfw"
+          className="twitter-follow-button text-blue-500 border-transparent focus:outline-none"
+          data-show-count="false"
         >
-          check out the code here
-        </a>{' '}
-      </p>
+          &nbsp;@HPWordle
+        </a>
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          // charset="utf-8"
+        ></script>
+      </div>
       <BuyMeACoffeeModal
         isOpen={isBuyMeModalOpen}
         handleClose={() => setBuyMeModalOpen(false)}
