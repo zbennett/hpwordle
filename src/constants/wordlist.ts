@@ -21,7 +21,6 @@ export const WORDS = [
   'rubeus',
   'bell',
   'bertie',
-  'ministry',
   'lucius',
   'pomfrey',
   'prince',

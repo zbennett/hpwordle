@@ -21,7 +21,6 @@ export const VALID_GUESSES = [
   'rubeus',
   'bell',
   'bertie',
-  'ministry',
   'lucius',
   'pomfrey',
   'prince',
