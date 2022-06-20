@@ -124,7 +124,7 @@ export const StatsModal = ({
         Questions, comments, concerns, suggestions? Tweet us
         <a
           href="https://twitter.com/HPWordle?ref_src=twsrc%5Etfw"
-          className="dark:text-white twitter-follow-button text-blue-500 border-transparent focus:outline-none"
+          className="twitter-follow-button text-blue-500 border-transparent focus:outline-none"
           data-show-count="false"
         >
           &nbsp;@HPWordle
