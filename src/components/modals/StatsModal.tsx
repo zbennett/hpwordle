@@ -7,6 +7,8 @@ import { shareStatus } from '../../lib/share'
 import { tomorrow } from '../../lib/words'
 import { BaseModal } from './BaseModal'
 import { BuyMeACoffeeModal } from './BuyMeACoffeeModal'
+import venmoSvg from "../../images/vemo.svg";
+import btcSvg from "../../images/Bitcoin.png";
 import {
   STATISTICS_TITLE,
   GUESS_DISTRIBUTION_TEXT,
@@ -65,42 +67,63 @@ export const StatsModal = ({
       </h5>
       <Histogram gameStats={gameStats} />
       {(isGameLost || isGameWon) && (
-        <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
+        <div className="mt-5 sm:mt-6 columns-2 dark:text-white grid grid-cols-2">
+        <div>
+          <div className='mt-10'></div>
           <div>
-            <div className="mt-10"></div>
+          <h5>{NEW_WORD_TEXT}</h5>
+          <Countdown
+            className="text-lg font-medium text-gray-900 dark:text-gray-100"
+            date={tomorrow}
+            daysInHours={true}
+          />
+        </div>
+        </div>
+        <div >
+          <div className='border-solid border-2 rounded-lg border-indigo-600'>
+          <span className='text-gray-900 dark:text-gray-100 font-medium'>
+          Support the site
+            </span>
             <div>
-              <h5>{NEW_WORD_TEXT}</h5>
-              <Countdown
-                className="text-lg font-medium text-gray-900 dark:text-gray-100"
-                date={tomorrow}
-                daysInHours={true}
-              />
+            <a href="https://venmo.com/harrypotterwordle?txn=pay"
+              className='focus:outline-none'
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button>
+                <img className='venmo' src={venmoSvg} alt=""/>
+              </button>
+            </a>
+
+              <button className='focus:outline-none' onClick={() => setBuyMeModalOpen(true)}>
+                <img className='venmo' src={btcSvg} alt=""/>
+              </button>
             </div>
           </div>
-          <button
-            type="button"
-            className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 sm:text-sm focus:outline-none"
-            onClick={() => setBuyMeModalOpen(true)}
-          >
-            Support the site
-          </button>
-          <button
-            type="button"
-            className="mt-2 w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
-            onClick={() => {
-              shareStatus(
-                guesses,
-                isGameLost,
-                isHardMode,
-                isDarkMode,
-                isHighContrastMode,
-                handleShareToClipboard
-              )
-            }}
-          >
-            {SHARE_TEXT}
-          </button>
+            
+
+            <button
+          type="button"
+          className="mt-2 w-full border-solid border-2 rounded-lg border-indigo-600 px-4 py-2 text-base font-medium text-gray-900 dark:text-gray-100 hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+          onClick={() => {
+            shareStatus(
+              guesses,
+              isGameLost,
+              isHardMode,
+              isDarkMode,
+              isHighContrastMode,
+              handleShareToClipboard
+            )
+          }}
+        >
+          {SHARE_TEXT}
+        </button>
+            
         </div>
+        
+
+        
+      </div>
       )}
       <div className="mt-4">
         <p className="dark:text-white">
@@ -128,7 +151,7 @@ export const StatsModal = ({
         Questions, comments, concerns, suggestions? Tweet us
         <a
           href="https://twitter.com/HPWordle?ref_src=twsrc%5Etfw"
-          className="dark:text-white twitter-follow-button text-blue-500 border-transparent focus:outline-none"
+          className=" twitter-follow-button text-blue-500 border-transparent focus:outline-none"
           data-show-count="false"
         >
           &nbsp;@HPWordle

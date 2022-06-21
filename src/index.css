@@ -84,6 +84,13 @@ svg.cursor-pointer:hover {
   display: flex;
 }
 
+.venmo {
+  height: 32px;
+  width: 32px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
 @keyframes revealAbsentCharCell {
   0% {
     transform: rotateX(0deg);
