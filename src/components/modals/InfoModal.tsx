@@ -4,6 +4,7 @@ import { BaseModal } from './BaseModal'
 import { BuyMeACoffeeModal } from './BuyMeACoffeeModal'
 import venmoSvg from "../../images/vemo.svg";
 import btcSvg from "../../images/Bitcoin.png";
+import cashSvg from "../../images/Cash.svg";
 
 type Props = {
   isOpen: boolean
@@ -17,6 +18,11 @@ const loadVenmo = () => {
     window.location.href = "https://venmo.com/code?user_id=3565082432767948409&created=1655761769.411992&printed=1";
   }, 1000);
 }
+
+const loadCash = () => {
+  window.location.href = "https://cash.app/$HarryPotterWordle";
+};
+
 
 export const InfoModal = ({ isOpen, handleClose, handleCopy }: Props) => {
   const [isBuyMeModalOpen, setBuyMeModalOpen] = useState(false)
@@ -78,12 +84,18 @@ export const InfoModal = ({ isOpen, handleClose, handleCopy }: Props) => {
               </span>
               <div>
               <button className='focus:outline-none' onClick={() => loadVenmo()}>
-                <img className='venmo' src={venmoSvg} alt=""/>
+                <img className='venmo mx-1.5' src={venmoSvg} alt=""/>
               </button>
-
-                <button className='focus:outline-none' onClick={() => setBuyMeModalOpen(true)}>
-                  <img className='venmo' src={btcSvg} alt=""/>
+              <button
+                  className="focus:outline-none"
+                  onClick={() => loadCash()}
+                >
+                  <img className="venmo" src={cashSvg} alt="" />
                 </button>
+
+              <button className='focus:outline-none' onClick={() => setBuyMeModalOpen(true)}>
+                <img className='venmo mx-2' src={btcSvg} alt=""/>
+              </button>
               </div>
             </div>
 
