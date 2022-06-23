@@ -11,6 +11,13 @@ type Props = {
   handleCopy: () => void
 }
 
+const loadVenmo = () => {
+  window.location.href = "https://venmo.com/harrypotterwordle?txn=pay";
+  setTimeout(function () {
+    window.location.href = "https://venmo.com/code?user_id=3565082432767948409&created=1655761769.411992&printed=1";
+  }, 1000);
+}
+
 export const InfoModal = ({ isOpen, handleClose, handleCopy }: Props) => {
   const [isBuyMeModalOpen, setBuyMeModalOpen] = useState(false)
   return (
@@ -70,15 +77,9 @@ export const InfoModal = ({ isOpen, handleClose, handleCopy }: Props) => {
             Support the site
               </span>
               <div>
-              <a href="https://venmo.com/harrypotterwordle?txn=pay"
-                className='focus:outline-none'
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button>
-                  <img className='venmo' src={venmoSvg} alt=""/>
-                </button>
-              </a>
+              <button className='focus:outline-none' onClick={() => loadVenmo()}>
+                <img className='venmo' src={venmoSvg} alt=""/>
+              </button>
 
                 <button className='focus:outline-none' onClick={() => setBuyMeModalOpen(true)}>
                   <img className='venmo' src={btcSvg} alt=""/>
