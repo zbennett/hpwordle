@@ -40,10 +40,6 @@ const loadVenmo = () => {
 
 const loadCash = () => {
   window.location.href = "https://cash.app/$HarryPotterWordle";
-  // setTimeout(function () {
-  //   window.location.href =
-  //     "https://venmo.com/code?user_id=3565082432767948409&created=1655761769.411992&printed=1";
-  // }, 1000); 
 };
 
 
